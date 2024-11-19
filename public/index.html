@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>FAAD Art Book</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Josefin Sans Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- Ultra Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Ultra&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js" integrity="sha256-ZAdXaZOlqhMD6vn++5Xlz8HAyAZFvTcX22cXJ+a1W5E=" crossorigin="anonymous"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="form.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <!-- <h1>  -->
+      <div class="headerImage">
+        <div class="logo-container">
+          <div class="logo">
+            <img src="assets/Logo.png" alt="Logo"> 
+          </div>
+        </div>
+
+
+        <div class="header">
+          <div class="header-column">
+            <div class="title">
+              <h1>FAAD Student<br>Art Board</h1>
+              <div><button id="add">Share Your Work</button></div>
+            </div>
+          </div>
+        </div>
+
+      <!-- </h1>   -->
+      <div class="community">
+        <p class="communityText"> Be a part of <br> our community</p>  
+        <div class="communityIMG"> <img src="assets/Scroll.svg" draggable="false"> </div>
+      </div>
+        
+        
+  </header>
+
+  <div class="NewestPost"><p>Newest Post 📸</p></div>
+   
+</div>
+
+
+
+  <div popover id="formPopover">
+    <form id="itemForm">
+      <h2 id="formHeading">Share Your Work</h2>
+      <section>
+        <input type="hidden" name="_id">
+        <div class="two-column">
+          <!-- Left Column -->
+          <div class="first-column">
+            <fieldset id="uploadArea">   
+              <label for="fileInput">
+                <img id="imagePreview" src="assets/photo.svg" draggable="false">
+              </label>
+              <div>
+                <h3>Upload Image</h3>
+                <div class="dragAndDropLabel"> 
+                  <img src="assets/dragdrop.svg" draggable="false">
+                  <span>Drag and drop image file to upload</span>
+                </div> 
+                <input type="hidden" name="fileName">  
+                <label for="fileInput" id="uploadButton"> 
+                  <img src="assets/folder.svg" draggable="false">
+                  <span>Browse</span> 
+                </label> 
+                <input type="file" accept="image/*" id="fileInput"> 
+              </div>
+            </fieldset>
+          </div>
+          <!-- Right Column -->
+          <div class="second-column">
+            <fieldset>
+              <label for="program">Program</label>
+              <select name="program" id="program" required>
+                  <option value="" disabled selected>Select a Program</option>
+                  <optgroup label="Programs">
+                      <option value="Advanced Special Effects Makeup, Prosthetics and Props">Advanced Special Effects Makeup, Prosthetics and Props</option>
+                      <option value="Advanced Television and Film">Advanced Television and Film</option>
+                      <option value="Animation">Animation</option>
+                      <option value="Art and Art History">Art and Art History</option>
+                      <option value="Art Fundamentals">Art Fundamentals</option>
+                      <option value="Computer Animation">Computer Animation</option>
+                      <option value="Craft and Design (Ceramics)">Craft and Design (Ceramics)</option>
+                      <option value="Craft and Design (Multidisciplinary)">Craft and Design (Multidisciplinary)</option>
+                      <option value="Craft and Design (Textiles)">Craft and Design (Textiles)</option>
+                      <option value="Digital Creature Animation – Technical Direction">Digital Creature Animation – Technical Direction</option>
+                      <option value="Digital Product Design">Digital Product Design</option>
+                      <option value="Experiential Design">Experiential Design</option>
+                      <option value="Film and Television">Film and Television</option>
+                      <option value="Furniture">Furniture</option>
+                      <option value="Game Design">Game Design</option>
+                      <option value="Game Level Design">Game Level Design</option>
+                      <option value="Glass">Glass</option>
+                      <option value="Illustration">Illustration</option>
+                      <option value="Industrial Design">Industrial Design</option>
+                      <option value="Interaction Design">Interaction Design</option>
+                      <option value="Interior Decorating">Interior Decorating</option>
+                      <option value="Interior Design">Interior Design</option>
+                      <option value="Journalism">Journalism</option>
+                      <option value="Makeup for Media and Creative Arts">Makeup for Media and Creative Arts</option>
+                      <option value="Media Fundamentals">Media Fundamentals</option>
+                      <option value="Music Scoring for Screen and Stage">Music Scoring for Screen and Stage</option>
+                      <option value="Music Theatre Performance">Music Theatre Performance</option>
+                      <option value="Performing Arts – Preparation">Performing Arts – Preparation</option>
+                      <option value="Photography">Photography</option>
+                      <option value="Public Relations – Corporate Communications">Public Relations – Corporate Communications</option>
+                      <option value="Technical Production for the Performing Arts Industry">Technical Production for the Performing Arts Industry</option>
+                      <option value="Theatre and Drama Studies">Theatre and Drama Studies</option>
+                      <option value="Visual and Creative Arts">Visual and Creative Arts</option>
+                      <option value="Visual Effects">Visual Effects</option>
+                      <option value="Visual Merchandising Design">Visual Merchandising Design</option>
+                      <option value="Visual Merchandising Design">Visual Merchandising Design</option>
+                  </optgroup>
+              </select>
+          </fieldset>
+      
+          <fieldset>
+              <label for="year">Year</label>
+              <select id="year" name="year" required>
+                  <option value="" disabled selected>Select a year</option> 
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+              </select>
+          </fieldset>
+          
+          <fieldset>
+              <label for="workTitle">Work Title</label>
+              <input required type="text" name="workTitle" id="workTitle" placeholder="e.g. Mona Lisa" autocomplete="off" />
+          </fieldset>
+      
+          <fieldset>
+              <label for="studentName">Student Name</label>
+              <input type="text" name="studentName" id="studentName" placeholder="Optional" autocomplete="off" />
+          </fieldset>
+
+          <!-- Save and Cancel Buttons -->
+          <div class="button-container">
+            <button class="save" popovertarget="formPopover">Post</button>
+            <button type="button" class="cancel">Cancel</button> 
+          </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="noticeArea"></section>
+    </form>
+  </div>
+
+  <!-- <div class="space"></div> -->
+
+
+
+
+  <div class="grid-wrapper">
+    <main id="content"></main>
+  </div> 
+     
+  <footer>
+
+    <div class="NewestPost"><p>Popular Post ⭐️</p></div>
+
+     <!-- Infinite Scrolling Popular Posts Section -->
+  <div class="popular-posts-container">
+    <div class="popular-posts">
+      <!-- Example cards for scrolling (add more as needed or populate dynamically) -->
+      <div class="item post-card">
+        <div class="program-year">
+          Furniture, 2024
+        </div>
+        <div class="image">
+          <img src="assets/wood.jpg" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>The Camel</h2>
+          </header>
+          <h3>by Sasha C</h3>
+        </div>
+      </div>
+      <div class="item post-card">
+        <div class="program-year">Animation, 2023</div>
+        <div class="image">
+          <img src="assets/animation.webp" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>Happiness</h2>
+          </header>
+          <h3>by Riley K</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Advanced Television & Film, 2022</div>
+        <div class="image">
+          <img src="assets/television.jpg" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>The Room</h2>
+          </header>
+          <h3>by Joshua F</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Craft & Design (Ceramics), 2024</div>
+        <div class="image">
+          <img src="assets/ceramic.jpg" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>Flowers in Us</h2>
+          </header>
+          <h3>by Anonymous</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Craft & Design (Textiles), 2023</div>
+        <div class="image">
+          <img src="assets/textiles.webp" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>People of Colours</h2>
+          </header>
+          <h3>by Oleg W</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Digital Product Design, 2024</div>
+        <div class="image">
+          <img src="assets/Digital.png" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>EZ Banking </h2>
+          </header>
+          <h3>by Zhang L</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Experiential Design, 2024</div>
+        <div class="image">
+          <img src="assets/experiential.webp" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>Borderless World</h2>
+          </header>
+          <h3>by Yuki S</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Game Design, 2022</div>
+        <div class="image">
+          <img src="assets/Game.png" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>Animalia Anarko</h2>
+          </header>
+          <h3>by Henry T</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Glass, 2024</div>
+        <div class="image">
+          <img src="assets/glass.webp" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>Cube of Light</h2>
+          </header>
+          <h3>by Anonymous</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Illustration, 2023</div>
+        <div class="image">
+          <img src="assets/illustration.webp" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>The Vision</h2>
+          </header>
+          <h3>by Saska O</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Industrial Design, 2024</div>
+        <div class="image">
+          <img src="assets/industrial.webp" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>Futuristic Radio</h2>
+          </header>
+          <h3>by Anonymous</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Interaction Design, 2023</div>
+        <div class="image">
+          <img src="assets/interaction.png" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>Nikie <br>- Fashion Mobile App</h2>
+          </header>
+          <h3>by Faza D</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Interior Design, 2022</div>
+        <div class="image">
+          <img src="assets/Interior.webp" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>Disco Pink</h2>
+          </header>
+          <h3>by Leonardo A</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Journalism, 2022</div>
+        <div class="image">
+          <img src="assets/journalism.jpg" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>On Live</h2>
+          </header>
+          <h3>by Anonymous</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Makeup for Media, 2022</div>
+        <div class="image">
+          <img src="assets/makeup.jpg" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>The Butterfly</h2>
+          </header>
+          <h3>by Anonymous</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Music Theater Performance, 2023</div>
+        <div class="image">
+          <img src="assets/theater.jpg" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>Tootsie</h2>
+          </header>
+          <h3>by Santino F</h3>
+        </div>
+      </div>
+
+      <div class="item post-card">
+        <div class="program-year">Photography, 2024</div>
+        <div class="image">
+          <img src="assets/photography.jpg" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>Marbles</h2>
+          </header>
+          <h3>by Anonymous</h3>
+        </div>
+      </div>
+
+       <div class="item post-card">
+        <div class="program-year">Visual Effects, 2020</div>
+        <div class="image">
+          <img src="assets/vfx.jpg" alt="Post Image 1">
+        </div>
+        <div class="information">
+          <header>
+            <h2>The Avengers</h2>
+          </header>
+          <h3>by Anonymous</h3>
+        </div>
+      </div>
+      
+      <!-- Repeat for 7-8 cards -->
+      <!-- Ensure each card has a unique title, image, and student name if dynamically populated -->
+    </div>
+  </div>
+
+
+
+
+ <div class="space"></div>
+
+  <div class="center">
+    <div><img src="assets/flourish.svg" height="100rem"></div>
+    <p>FAAD Art Book</p>
+    <p>Sheridan College</p>
+    <p>by <a href="https://www.katsdesign.com/" target="_blank">Katherine Dao</a> & <a href="https://franziskakwan.webflow.io" target="_blank">Franziska Kwan</a></p>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

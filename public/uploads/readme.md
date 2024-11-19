@@ -1,0 +1,1 @@
+This folder is used to store image uploads. Files will be assigned a unique name which will be referenced in MongoDB.
